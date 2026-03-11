@@ -1,0 +1,19 @@
+namespace SchoolV001.Models.Domain;
+
+public class StudentRecord
+{
+    public int Id { get; set; }
+    public int StudentId { get; set; }
+    public string AcademicYear { get; set; } = string.Empty;
+    public string Stage { get; set; } = "التعليم الأساسي";
+    public string Cycle { get; set; } = "الحلقة الأولى";
+    public string Grade { get; set; } = string.Empty;
+    public string Section { get; set; } = string.Empty;
+    public int RollNumber { get; set; }
+    public DateTime EnrollmentDate { get; set; } = DateTime.UtcNow;
+    public string EnrollmentStatus { get; set; } = "مستجد";
+    public string ResultStatus { get; set; } = "قيد الدراسة";
+    public int AbsenceCount { get; set; }
+    public int TardinessCount { get; set; }
+    public string Notes { get; set; } = string.Empty;
+}

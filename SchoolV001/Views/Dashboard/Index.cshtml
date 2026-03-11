@@ -1,0 +1,50 @@
+@model DashboardVm
+@{
+    ViewData["Title"] = "لوحة التحكم";
+}
+
+<div class="row g-3 mb-4">
+    <div class="col-md-3">
+        <div class="stat-card">
+            <p>الطلاب المسجلون</p>
+            <h3>@Model.StudentsCount</h3>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="stat-card">
+            <p>السجلات السنوية</p>
+            <h3>@Model.RecordsCount</h3>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="stat-card">
+            <p>المعلمون</p>
+            <h3>@Model.TeachersCount</h3>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="stat-card">
+            <p>المواد</p>
+            <h3>@Model.SubjectsCount</h3>
+        </div>
+    </div>
+</div>
+
+<div class="card border-0 shadow-sm">
+    <div class="card-body">
+        <h5 class="card-title mb-3">تنبيهات النظام</h5>
+        @if (Model.Alerts.Any())
+        {
+            <ul class="list-group list-group-flush">
+                @foreach (var alert in Model.Alerts)
+                {
+                    <li class="list-group-item">@alert</li>
+                }
+            </ul>
+        }
+        else
+        {
+            <p class="text-success m-0">لا يوجد تنبيهات حالياً.</p>
+        }
+    </div>
+</div>

@@ -1,0 +1,41 @@
+@model AttendanceEntry
+@{
+    ViewData["Title"] = "لوحة الغياب اليومية";
+}
+
+<div class="card border-0 shadow-sm">
+    <div class="card-body">
+        @if (TempData["msg"] != null)
+        {
+            <div class="alert alert-success">@TempData["msg"]</div>
+        }
+
+        <form method="post" class="row g-3">
+            <div class="col-md-3">
+                <label class="form-label">معرف السجل السنوي</label>
+                <input asp-for="StudentRecordId" class="form-control" />
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">التاريخ</label>
+                <input asp-for="AttendanceDate" class="form-control" type="date" />
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">الحالة</label>
+                <select asp-for="Status" class="form-select">
+                    <option>حاضر</option>
+                    <option>غائب</option>
+                    <option>متأخر</option>
+                    <option>مبرر</option>
+                    <option>غير مبرر</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">ملاحظات</label>
+                <input asp-for="Notes" class="form-control" />
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">حفظ الدوام</button>
+            </div>
+        </form>
+    </div>
+</div>

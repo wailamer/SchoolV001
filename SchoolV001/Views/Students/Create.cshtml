@@ -1,0 +1,34 @@
+@model StudentCreateVm
+@{
+    ViewData["Title"] = "إضافة طالب جديد";
+}
+
+<form method="post" class="card border-0 shadow-sm">
+    <div class="card-body">
+        <div class="section-title">البيانات الأساسية</div>
+        <div class="row g-3 mb-3">
+            <div class="col-md-3"><input asp-for="Student.FirstName" class="form-control" placeholder="الاسم" /></div>
+            <div class="col-md-3"><input asp-for="Student.FatherName" class="form-control" placeholder="اسم الأب" /></div>
+            <div class="col-md-3"><input asp-for="Student.GrandFatherName" class="form-control" placeholder="اسم الجد" /></div>
+            <div class="col-md-3"><input asp-for="Student.LastName" class="form-control" placeholder="الكنية" /></div>
+            <div class="col-md-4"><input asp-for="Student.MotherName" class="form-control" placeholder="اسم الأم" /></div>
+            <div class="col-md-4"><input asp-for="Student.MinistryCode" class="form-control" placeholder="الكود الوزاري" /></div>
+            <div class="col-md-4"><input asp-for="Student.BirthDate" class="form-control" type="date" /></div>
+            <div class="col-md-6"><input asp-for="Student.Phone" class="form-control" placeholder="الهاتف" /></div>
+            <div class="col-md-6"><input asp-for="Student.Address" class="form-control" placeholder="العنوان" /></div>
+        </div>
+
+        <div class="section-title">السجل السنوي الأول</div>
+        <div class="row g-3">
+            <div class="col-md-3"><input asp-for="FirstRecord.AcademicYear" class="form-control" placeholder="2025/2026" /></div>
+            <div class="col-md-3"><input asp-for="FirstRecord.Grade" class="form-control" placeholder="الصف" /></div>
+            <div class="col-md-3"><input asp-for="FirstRecord.Section" class="form-control" placeholder="الشعبة" /></div>
+            <div class="col-md-3"><input asp-for="FirstRecord.RollNumber" class="form-control" placeholder="رقم الطالب بالشعبة" /></div>
+        </div>
+    </div>
+
+    <div class="card-footer bg-white d-flex gap-2">
+        <button type="submit" class="btn btn-success">حفظ الطالب</button>
+        <a asp-action="Index" class="btn btn-outline-secondary">رجوع</a>
+    </div>
+</form>

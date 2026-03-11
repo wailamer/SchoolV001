@@ -1,0 +1,32 @@
+@model SchoolSettings
+@{
+    ViewData["Title"] = "إعدادات المدرسة";
+}
+
+<div class="card border-0 shadow-sm">
+    <div class="card-body">
+        <h5 class="mb-3">بيانات المدرسة الحالية</h5>
+        <div class="row g-3">
+            <div class="col-md-6">
+                <label class="form-label">الاسم العربي</label>
+                <input class="form-control" value="@Model.SchoolNameArabic" readonly />
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">الاسم الإنكليزي</label>
+                <input class="form-control" value="@Model.SchoolNameEnglish" readonly />
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">السنة الدراسية</label>
+                <input class="form-control" value="@Model.CurrentAcademicYear" readonly />
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">الهاتف</label>
+                <input class="form-control" value="@Model.Phone" readonly />
+            </div>
+            <div class="col-12">
+                <label class="form-label">العنوان</label>
+                <input class="form-control" value="@Model.Address" readonly />
+            </div>
+        </div>
+    </div>
+</div>

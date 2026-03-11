@@ -1,0 +1,39 @@
+@model MarkEntryVm
+@{
+    ViewData["Title"] = "إدخال العلامات";
+}
+
+<div class="card border-0 shadow-sm">
+    <div class="card-body">
+        <h5 class="mb-3">إدخال علامات الفصل @Model.SemesterNumber</h5>
+        <form method="post">
+            <input type="hidden" asp-for="StudentRecordId" />
+            <input type="hidden" asp-for="SemesterNumber" />
+            <div class="table-responsive">
+                <table class="table table-bordered align-middle">
+                    <thead class="table-light">
+                        <tr><th>المادة</th><th>أنشطة</th><th>شفهي</th><th>وظائف</th><th>امتحان</th></tr>
+                    </thead>
+                    <tbody>
+                        @for (var i = 0; i < Model.Marks.Count; i++)
+                        {
+                            <tr>
+                                <td>
+                                    @Model.Marks[i].SubjectName
+                                    <input type="hidden" asp-for="Marks[i].SubjectName" />
+                                    <input type="hidden" asp-for="Marks[i].StudentRecordId" />
+                                    <input type="hidden" asp-for="Marks[i].SemesterNumber" />
+                                </td>
+                                <td><input asp-for="Marks[i].Activities" class="form-control" /></td>
+                                <td><input asp-for="Marks[i].Oral" class="form-control" /></td>
+                                <td><input asp-for="Marks[i].Homework" class="form-control" /></td>
+                                <td><input asp-for="Marks[i].Exam" class="form-control" /></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <button type="submit" class="btn btn-success">حفظ العلامات</button>
+        </form>
+    </div>
+</div>

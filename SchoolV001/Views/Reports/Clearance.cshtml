@@ -1,0 +1,39 @@
+@model PrimaryReportVm
+@{
+    ViewData["Title"] = "جلاء الطالب";
+}
+
+<div class="report-sheet">
+    <div class="report-header">
+        <h3>جلاء الحلقة الأولى</h3>
+        <p>العام الدراسي: @Model.Record.AcademicYear</p>
+    </div>
+
+    <div class="row g-2 mb-3">
+        <div class="col-md-4"><strong>اسم التلميذ:</strong> @Model.Student.FullName</div>
+        <div class="col-md-4"><strong>اسم الأب:</strong> @Model.Student.FatherName</div>
+        <div class="col-md-4"><strong>اسم الأم:</strong> @Model.Student.MotherName</div>
+        <div class="col-md-4"><strong>الصف:</strong> @Model.Record.Grade</div>
+        <div class="col-md-4"><strong>الشعبة:</strong> @Model.Record.Section</div>
+        <div class="col-md-4"><strong>النتيجة:</strong> @Model.FinalResult</div>
+    </div>
+
+    <h6>الفصل الأول</h6>
+    <table class="table table-sm table-bordered">
+        <tbody>
+        @foreach (var m in Model.Semester1) { <tr><td>@m.SubjectName</td><td>@m.Total</td></tr> }
+        </tbody>
+    </table>
+
+    <h6>الفصل الثاني</h6>
+    <table class="table table-sm table-bordered">
+        <tbody>
+        @foreach (var m in Model.Semester2) { <tr><td>@m.SubjectName</td><td>@m.Total</td></tr> }
+        </tbody>
+    </table>
+
+    <div class="report-summary">
+        <p><strong>المجموع:</strong> @Model.YearTotal</p>
+        <p><strong>النسبة المئوية:</strong> %@Model.Percentage</p>
+    </div>
+</div>
