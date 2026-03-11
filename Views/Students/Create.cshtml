@@ -1,0 +1,22 @@
+@model StudentCreateVm
+@{
+    ViewData["Title"] = "إضافة طالب";
+}
+<h2>إضافة طالب</h2>
+<form method="post">
+    <div class="card">
+        <label>الاسم الأول</label><input asp-for="Student.FirstName" />
+        <label>اسم الأب</label><input asp-for="Student.FatherName" />
+        <label>اسم العائلة</label><input asp-for="Student.LastName" />
+        <label>اسم الأم</label><input asp-for="Student.MotherName" />
+        <label>الكود الوزاري</label><input asp-for="Student.MinistryCode" />
+        <label>الهاتف</label><input asp-for="Student.Phone" />
+    </div>
+    <div class="card">
+        <label>العام الدراسي</label><input asp-for="InitialRecord.AcademicYear" />
+        <label>الصف</label><input asp-for="InitialRecord.Grade" />
+        <label>الشعبة</label><input asp-for="InitialRecord.Section" />
+        <label>رقم الطالب في الصف</label><input asp-for="InitialRecord.RollNumber" />
+    </div>
+    <button type="submit">حفظ</button>
+</form>

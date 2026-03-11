@@ -1,0 +1,22 @@
+@model IEnumerable<StudentRegistration>
+@{
+    ViewData["Title"] = "الطلاب";
+}
+<h2>الطلاب</h2>
+<p><a asp-action="Create">إضافة طالب جديد</a></p>
+<table>
+    <thead>
+        <tr><th>الرقم العام</th><th>الكود الوزاري</th><th>الاسم</th><th>الهاتف</th></tr>
+    </thead>
+    <tbody>
+    @foreach (var student in Model)
+    {
+        <tr>
+            <td>@student.GeneralRegisterNumber</td>
+            <td>@student.MinistryCode</td>
+            <td>@student.FullName</td>
+            <td>@student.Phone</td>
+        </tr>
+    }
+    </tbody>
+</table>

@@ -1,0 +1,8 @@
+@model IEnumerable<Subject>
+<h2>المواد</h2>
+<table><thead><tr><th>الاسم</th><th>المدى الصفّي</th></tr></thead><tbody>
+@foreach (var s in Model)
+{
+<tr><td>@s.Name</td><td>@s.GradeRange</td></tr>
+}
+</tbody></table>

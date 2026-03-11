@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SchoolSettings>
+  <SchoolSettings>
+    <SchoolNameArabic>مدرسة الياسمين السورية الافتراضية</SchoolNameArabic>
+    <SchoolNameEnglish>Jasmine Syrian Virtual School</SchoolNameEnglish>
+    <Phone>000000000</Phone>
+    <Address>سوريا</Address>
+    <LogoPath>/uploads/school/logo.png</LogoPath>
+    <CurrentAcademicYear>2025/2026</CurrentAcademicYear>
+  </SchoolSettings>
+</SchoolSettings>
