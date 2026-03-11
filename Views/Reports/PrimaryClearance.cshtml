@@ -1,0 +1,45 @@
+@model PrimaryReportVm
+@{
+    ViewData["Title"] = "جلاء الحلقة الأولى";
+}
+
+<div class="report-sheet bg-white p-4 border">
+    <h4 class="text-center mb-4">@Model.Settings.SchoolNameArabic</h4>
+    <h5 class="text-center mb-4">نموذج جلاء الحلقة الأولى</h5>
+
+    <div class="row mb-2">
+        <div class="col">اسم التلميذ: <strong>@Model.Student.FullName</strong></div>
+        <div class="col">اسم الأب: <strong>@Model.Student.FatherName</strong></div>
+        <div class="col">اسم الأم: <strong>@Model.Student.MotherName</strong></div>
+    </div>
+    <div class="row mb-4">
+        <div class="col">الصف: <strong>@Model.Record.Grade</strong></div>
+        <div class="col">الشعبة: <strong>@Model.Record.Section</strong></div>
+        <div class="col">العام الدراسي: <strong>@Model.Record.AcademicYear</strong></div>
+        <div class="col">الرقم العام: <strong>@Model.Student.GeneralRegisterNumber</strong></div>
+    </div>
+
+    <h6>الفصل الأول</h6>
+    <table class="table table-sm table-bordered">
+        <thead><tr><th>المادة</th><th>المحصلة</th><th>التقدير</th></tr></thead>
+        <tbody>@foreach (var m in Model.Semester1) { <tr><td>@m.SubjectName</td><td>@m.Total</td><td>@m.GradeText</td></tr> }</tbody>
+    </table>
+
+    <h6>الفصل الثاني</h6>
+    <table class="table table-sm table-bordered">
+        <thead><tr><th>المادة</th><th>المحصلة</th><th>التقدير</th></tr></thead>
+        <tbody>@foreach (var m in Model.Semester2) { <tr><td>@m.SubjectName</td><td>@m.Total</td><td>@m.GradeText</td></tr> }</tbody>
+    </table>
+
+    <div class="row mt-4">
+        <div class="col">مجموع الفصلين: <strong>@Model.FinalTotal</strong></div>
+        <div class="col">النسبة المئوية: <strong>@Model.FinalPercentage%</strong></div>
+        <div class="col">النتيجة النهائية: <strong>@Model.FinalResult</strong></div>
+    </div>
+
+    <div class="mt-3">التوجيهات التربوية: @Model.Guidance</div>
+    <div class="row mt-5">
+        <div class="col text-center">اسم المعلم والتوقيع</div>
+        <div class="col text-center">اسم المدير والتوقيع والختم</div>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+@model List<StudentMark>
+@{
+    ViewData["Title"] = "كشف درجات الفصل الأول";
+}
+
+<div class="bg-white p-4 border">
+    <h4>كشف درجات الفصل الأول - @ViewBag.StudentName</h4>
+    <table class="table table-bordered mt-3">
+        <thead>
+            <tr>
+                <th>المادة</th>
+                <th>أنشطة/مذاكرة</th>
+                <th>شفهي</th>
+                <th>وظائف</th>
+                <th>امتحان</th>
+                <th>مجموع الفصل</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var m in Model)
+        {
+            <tr>
+                <td>@m.SubjectName</td>
+                <td>@m.Activities</td>
+                <td>@m.Oral</td>
+                <td>@m.Homework</td>
+                <td>@m.Exam</td>
+                <td>@m.Total</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+    <div class="fw-bold">المحصلة العامة: @ViewBag.Total</div>
+    <div class="fw-bold">النسبة المئوية النهائية: @ViewBag.Percentage%</div>
+</div>

@@ -1,0 +1,15 @@
+body {
+    background: #f4f6fb;
+    font-family: "Cairo", "Segoe UI", Tahoma, sans-serif;
+}
+
+.stat-card {
+    border: 0;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #ffffff, #eef3ff);
+    padding: 1rem;
+}
+
+.report-sheet {
+    border-radius: 10px;
+}
