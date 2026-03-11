@@ -1,0 +1,26 @@
+@model AttendanceBoardVm
+@{ ViewData["Title"] = "لوحة الغياب"; }
+<h1>لوحة الغياب اليومية</h1>
+<form method="post" asp-action="Save">
+    <input asp-for="Grade" />
+    <input asp-for="Section" />
+    <input asp-for="Date" type="date" />
+    <table>
+        <thead><tr><th>الطالب</th><th>الحالة</th><th>ملاحظات</th></tr></thead>
+        <tbody>
+        @for (var i = 0; i < Model.Rows.Count; i++)
+        {
+            <tr>
+                <td>
+                    @Model.Rows[i].StudentName
+                    <input type="hidden" asp-for="Rows[i].StudentRecordId" />
+                    <input type="hidden" asp-for="Rows[i].StudentName" />
+                </td>
+                <td><select asp-for="Rows[i].Status"><option>حاضر</option><option>غائب</option><option>متأخر</option><option>مبرر</option><option>غير مبرر</option></select></td>
+                <td><input asp-for="Rows[i].Notes" /></td>
+            </tr>
+        }
+        </tbody>
+    </table>
+    <button type="submit">حفظ الدوام</button>
+</form>

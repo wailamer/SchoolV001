@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - SchoolV001</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <nav class="top-nav">
+            <a asp-controller="Dashboard" asp-action="Index">لوحة التحكم</a>
+            <a asp-controller="Students" asp-action="Index">الطلاب</a>
+            <a asp-controller="Attendance" asp-action="Index">الغياب</a>
+            <a asp-controller="Marks" asp-action="Entry">العلامات</a>
+            <a asp-controller="Reports" asp-action="PrimaryClearance" asp-route-studentRecordId="1">الجلاء</a>
+            <a asp-controller="Teachers" asp-action="Index">المعلمين</a>
+            <a asp-controller="Subjects" asp-action="Index">المواد</a>
+            <a asp-controller="Settings" asp-action="Index">الإعدادات</a>
+        </nav>
+    </header>
+    <main class="container">@RenderBody()</main>
+</body>
+</html>

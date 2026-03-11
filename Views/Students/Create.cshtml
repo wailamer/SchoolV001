@@ -1,0 +1,18 @@
+@model StudentCreateVm
+@{ ViewData["Title"] = "تسجيل طالب"; }
+<h1>تسجيل طالب جديد</h1>
+<form method="post">
+    <label>الاسم</label><input asp-for="FirstName" />
+    <label>اسم الأب</label><input asp-for="FatherName" />
+    <label>اسم الجد</label><input asp-for="GrandFatherName" />
+    <label>الكنية</label><input asp-for="LastName" />
+    <label>اسم الأم</label><input asp-for="MotherName" />
+    <label>تاريخ الميلاد</label><input asp-for="BirthDate" type="date" />
+    <label>الكود الوزاري</label><input asp-for="MinistryCode" />
+    <label>الهاتف</label><input asp-for="Phone" />
+    <label>العنوان</label><input asp-for="Address" />
+    <label>الصف</label><input asp-for="Grade" />
+    <label>الشعبة</label><input asp-for="Section" />
+    <label>العام الدراسي</label><input asp-for="AcademicYear" />
+    <button type="submit">حفظ</button>
+</form>

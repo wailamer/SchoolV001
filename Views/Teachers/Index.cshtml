@@ -1,0 +1,3 @@
+@model List<Teacher>
+<h1>إدارة المعلمين</h1>
+<table><thead><tr><th>الاسم</th><th>الموبايل</th><th>المؤهل</th><th>الصف</th></tr></thead><tbody>@foreach (var t in Model){<tr><td>@t.FullName</td><td>@t.Mobile</td><td>@t.Qualification</td><td>@t.AssignedGrade</td></tr>}</tbody></table>

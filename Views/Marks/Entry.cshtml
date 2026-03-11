@@ -1,0 +1,23 @@
+@model MarkEntryVm
+@{ ViewData["Title"] = "إدخال العلامات"; }
+<h1>إدخال علامات الفصل</h1>
+<form method="post">
+    <input type="hidden" asp-for="StudentRecordId" />
+    <label>الفصل</label><input asp-for="SemesterNumber" />
+    <table>
+        <thead><tr><th>المادة</th><th>أنشطة</th><th>شفهي</th><th>وظائف</th><th>امتحان</th></tr></thead>
+        <tbody>
+        @for (var i = 0; i < Model.SubjectMarks.Count; i++)
+        {
+            <tr>
+                <td><input asp-for="SubjectMarks[i].SubjectName" /></td>
+                <td><input asp-for="SubjectMarks[i].Activities" /></td>
+                <td><input asp-for="SubjectMarks[i].Oral" /></td>
+                <td><input asp-for="SubjectMarks[i].Homework" /></td>
+                <td><input asp-for="SubjectMarks[i].Exam" /></td>
+            </tr>
+        }
+        </tbody>
+    </table>
+    <button type="submit">حفظ العلامات</button>
+</form>

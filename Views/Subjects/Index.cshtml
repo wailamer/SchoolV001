@@ -1,0 +1,3 @@
+@model List<Subject>
+<h1>إدارة المواد</h1>
+<table><thead><tr><th>الترتيب</th><th>المادة</th><th>المدى</th></tr></thead><tbody>@foreach (var s in Model){<tr><td>@s.SortOrder</td><td>@s.Name</td><td>@s.GradeRange</td></tr>}</tbody></table>

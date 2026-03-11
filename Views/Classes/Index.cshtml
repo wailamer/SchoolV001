@@ -1,0 +1,3 @@
+@model List<ClassGroupVm>
+<h1>الصفوف والشعب</h1>
+<table><thead><tr><th>الصف</th><th>الشعبة</th><th>عدد الطلاب</th></tr></thead><tbody>@foreach (var g in Model){<tr><td>@g.Grade</td><td>@g.Section</td><td>@g.StudentsCount</td></tr>}</tbody></table>

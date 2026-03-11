@@ -1,0 +1,19 @@
+@model PrimaryReportVm
+@{ ViewData["Title"] = "جلاء الحلقة الأولى"; }
+<h1>جلاء الحلقة الأولى</h1>
+<div class="card">
+    <p><b>اسم التلميذ:</b> @Model.Student.FullName</p>
+    <p><b>اسم الأم:</b> @Model.Student.MotherName</p>
+    <p><b>الصف/الشعبة:</b> @Model.Record.Grade - @Model.Record.Section</p>
+    <p><b>العام الدراسي:</b> @Model.Record.AcademicYear</p>
+</div>
+<h3>الفصل الأول</h3>
+<table><thead><tr><th>المادة</th><th>المجموع</th><th>التقدير</th></tr></thead><tbody>@foreach (var m in Model.SemesterOne){<tr><td>@m.SubjectName</td><td>@m.Total</td><td>@m.GradeText</td></tr>}</tbody></table>
+<h3>الفصل الثاني</h3>
+<table><thead><tr><th>المادة</th><th>المجموع</th><th>التقدير</th></tr></thead><tbody>@foreach (var m in Model.SemesterTwo){<tr><td>@m.SubjectName</td><td>@m.Total</td><td>@m.GradeText</td></tr>}</tbody></table>
+<div class="card">
+    <p><b>الدوام (غياب):</b> @Model.Absences يوم</p>
+    <p><b>المحصلة النهائية:</b> @Model.FinalTotal</p>
+    <p><b>النسبة:</b> %@Model.Percentage</p>
+    <p><b>النتيجة:</b> @Model.ResultText</p>
+</div>

@@ -1,0 +1,10 @@
+@model SchoolSettings
+@{ ViewData["Title"] = "إعدادات المدرسة"; }
+<h1>إعدادات المدرسة</h1>
+<table>
+<tr><th>اسم المدرسة عربي</th><td>@Model.SchoolNameArabic</td></tr>
+<tr><th>اسم المدرسة إنجليزي</th><td>@Model.SchoolNameEnglish</td></tr>
+<tr><th>الهاتف</th><td>@Model.Phone</td></tr>
+<tr><th>العنوان</th><td>@Model.Address</td></tr>
+<tr><th>العام الحالي</th><td>@Model.CurrentAcademicYear</td></tr>
+</table>

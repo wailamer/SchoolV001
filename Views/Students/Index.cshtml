@@ -1,0 +1,15 @@
+@model List<StudentRegistration>
+@{ ViewData["Title"] = "الطلاب"; }
+<h1>إدارة الطلاب</h1>
+<a class="btn" asp-action="Create">إضافة طالب جديد</a>
+<table>
+    <thead><tr><th>الرقم العام</th><th>الكود الوزاري</th><th>الاسم الكامل</th><th>الأم</th><th>الهاتف</th></tr></thead>
+    <tbody>
+    @foreach (var s in Model)
+    {
+        <tr>
+            <td>@s.GeneralRegisterNumber</td><td>@s.MinistryCode</td><td>@s.FullName</td><td>@s.MotherName</td><td>@s.Phone</td>
+        </tr>
+    }
+    </tbody>
+</table>

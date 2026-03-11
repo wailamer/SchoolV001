@@ -1,0 +1,5 @@
+<Subjects>
+  <Subject><Id>1</Id><Name>اللغة العربية</Name><GradeRange>1-12</GradeRange><IsPrimaryOnly>false</IsPrimaryOnly><SortOrder>1</SortOrder></Subject>
+  <Subject><Id>2</Id><Name>الرياضيات</Name><GradeRange>1-12</GradeRange><IsPrimaryOnly>false</IsPrimaryOnly><SortOrder>2</SortOrder></Subject>
+  <Subject><Id>3</Id><Name>العلوم</Name><GradeRange>1-12</GradeRange><IsPrimaryOnly>false</IsPrimaryOnly><SortOrder>3</SortOrder></Subject>
+</Subjects>
