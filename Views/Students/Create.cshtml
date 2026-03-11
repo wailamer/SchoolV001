@@ -1,0 +1,25 @@
+@model StudentCreateVm
+@{
+    ViewData["Title"] = "إضافة طالب";
+}
+
+<h3 class="mb-3">إضافة طالب جديد</h3>
+<form method="post" class="card p-4">
+    <div class="row g-3">
+        <div class="col-md-3"><label class="form-label">الاسم الأول</label><input asp-for="Student.FirstName" class="form-control" required /></div>
+        <div class="col-md-3"><label class="form-label">اسم الأب</label><input asp-for="Student.FatherName" class="form-control" required /></div>
+        <div class="col-md-3"><label class="form-label">اسم الجد</label><input asp-for="Student.GrandFatherName" class="form-control" /></div>
+        <div class="col-md-3"><label class="form-label">النسبة</label><input asp-for="Student.LastName" class="form-control" required /></div>
+        <div class="col-md-3"><label class="form-label">اسم الأم</label><input asp-for="Student.MotherName" class="form-control" /></div>
+        <div class="col-md-3"><label class="form-label">الكود الوزاري</label><input asp-for="Student.MinistryCode" class="form-control" /></div>
+        <div class="col-md-3"><label class="form-label">تاريخ الميلاد</label><input asp-for="Student.BirthDate" type="date" class="form-control" /></div>
+        <div class="col-md-3"><label class="form-label">مكان الولادة</label><input asp-for="Student.BirthPlace" class="form-control" /></div>
+        <div class="col-md-4"><label class="form-label">العنوان</label><input asp-for="Student.Address" class="form-control" /></div>
+        <div class="col-md-2"><label class="form-label">الهاتف</label><input asp-for="Student.Phone" class="form-control" /></div>
+        <div class="col-md-2"><label class="form-label">الصف</label><input asp-for="FirstRecord.Grade" class="form-control" value="الرابع" /></div>
+        <div class="col-md-2"><label class="form-label">الشعبة</label><input asp-for="FirstRecord.Section" class="form-control" value="1" /></div>
+        <div class="col-md-2"><label class="form-label">الرقم التسلسلي</label><input asp-for="FirstRecord.RollNumber" class="form-control" value="1" /></div>
+        <div class="col-md-3"><label class="form-label">العام الدراسي</label><input asp-for="FirstRecord.AcademicYear" class="form-control" value="2025/2026" /></div>
+    </div>
+    <button class="btn btn-success mt-4">حفظ الطالب والسجل السنوي</button>
+</form>

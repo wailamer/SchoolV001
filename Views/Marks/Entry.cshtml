@@ -1,0 +1,36 @@
+@model MarkEntryVm
+@{
+    ViewData["Title"] = "إدخال العلامات";
+}
+
+<h3 class="mb-3">إدخال علامات الفصل</h3>
+@if (TempData["Saved"] is not null)
+{
+    <div class="alert alert-success">@TempData["Saved"]</div>
+}
+
+<form method="post" class="card p-3">
+    <div class="row g-3 mb-3">
+        <div class="col-md-3"><label>رقم السجل السنوي</label><input asp-for="StudentRecordId" class="form-control" /></div>
+        <div class="col-md-3"><label>الفصل</label><select asp-for="SemesterNumber" class="form-select"><option value="1">الأول</option><option value="2">الثاني</option></select></div>
+    </div>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr><th>المادة</th><th>أنشطة</th><th>شفهي</th><th>وظائف</th><th>امتحان</th></tr>
+        </thead>
+        <tbody>
+            @for (int i = 0; i < Model.SubjectMarks.Count; i++)
+            {
+                <tr>
+                    <td><input asp-for="SubjectMarks[i].SubjectName" class="form-control" readonly /></td>
+                    <td><input asp-for="SubjectMarks[i].Activities" class="form-control" /></td>
+                    <td><input asp-for="SubjectMarks[i].Oral" class="form-control" /></td>
+                    <td><input asp-for="SubjectMarks[i].Homework" class="form-control" /></td>
+                    <td><input asp-for="SubjectMarks[i].Exam" class="form-control" /></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <button class="btn btn-primary">حفظ العلامات</button>
+</form>

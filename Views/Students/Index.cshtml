@@ -1,0 +1,41 @@
+@model List<StudentRegistration>
+@{
+    ViewData["Title"] = "الطلاب";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h3>قائمة الطلاب</h3>
+    <a class="btn btn-primary" asp-action="Create">إضافة طالب</a>
+</div>
+
+@if (TempData["Saved"] is not null)
+{
+    <div class="alert alert-success">@TempData["Saved"]</div>
+}
+
+<table class="table table-striped table-bordered bg-white">
+    <thead>
+        <tr>
+            <th>الرقم العام</th>
+            <th>الكود الوزاري</th>
+            <th>الاسم الكامل</th>
+            <th>الهاتف</th>
+            <th>إجراءات</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.GeneralRegisterNumber</td>
+                <td>@student.MinistryCode</td>
+                <td>@student.FullName</td>
+                <td>@student.Phone</td>
+                <td>
+                    <a class="btn btn-sm btn-outline-secondary" asp-controller="Reports" asp-action="PrimaryClearance" asp-route-studentId="@student.Id">جلاء</a>
+                    <a class="btn btn-sm btn-outline-info" asp-controller="Reports" asp-action="SemesterSheet" asp-route-studentId="@student.Id">كشف فصل أول</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,21 @@
+@model DashboardVm
+@{
+    ViewData["Title"] = "لوحة التحكم";
+}
+
+<div class="row g-3 mb-4">
+    <div class="col-md-3"><div class="card stat-card"><h6>عدد الطلاب</h6><h2>@Model.StudentsCount</h2></div></div>
+    <div class="col-md-3"><div class="card stat-card"><h6>السجلات السنوية</h6><h2>@Model.AnnualRecordsCount</h2></div></div>
+    <div class="col-md-3"><div class="card stat-card"><h6>المواد</h6><h2>@Model.SubjectsCount</h2></div></div>
+    <div class="col-md-3"><div class="card stat-card"><h6>قيود العلامات</h6><h2>@Model.MarksCount</h2></div></div>
+</div>
+
+<div class="card p-3">
+    <h5>تنبيهات النظام</h5>
+    <ul>
+        @foreach (var alert in Model.Alerts)
+        {
+            <li>@alert</li>
+        }
+    </ul>
+</div>
